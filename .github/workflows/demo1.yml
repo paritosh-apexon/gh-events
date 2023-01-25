@@ -8,8 +8,9 @@ on:
     branches: 
       - main
       - 'dev-*'
-    path-ignore:
-      - '.github/workflows/*'
+      - 'dev'
+    # path-ignore:
+    #   - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
