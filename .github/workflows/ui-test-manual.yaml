@@ -1,7 +1,7 @@
 name: ui-test (manual)
 on:
   schedule:
-     - cron: '12 06 * * 1-5'
+     - cron: '00 12 * * 1-5'
   workflow_dispatch:
     inputs:
       lane:
