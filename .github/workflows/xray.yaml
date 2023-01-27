@@ -9,7 +9,7 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-    if: github.ref == 'feature/test.7.0'
+    # if: github.ref == 'feature/test.7.0'
     steps:
       - name: Start Xray
         run: echo "Hello Xray"
