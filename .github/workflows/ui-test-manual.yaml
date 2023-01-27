@@ -52,5 +52,5 @@ jobs:
         - name: test
           run: echo "hello"
         - name: Set current date as env variable
-          run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+          run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')"
 
