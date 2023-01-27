@@ -1,0 +1,53 @@
+name: ui-test (manual)
+on:
+  schedule:
+     - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      lane:
+        required: true
+        type: string
+        description: The Fastlane lane to run
+        default: 'run_ui_tests'
+      environment:
+        required: true
+        type: string
+        description: The Fastlane dotenv file to use (dev, int, qa, prod)
+        default: 'qa'
+      product_type:
+        required: true
+        type: string
+        description: '"application" or "framework"'
+        default: application
+      set_build_number:
+        required: true
+        type: boolean
+        description: "If true, set, increment, and push tags for "
+        default: false
+      runner:
+        required: false
+        type: string
+        description: "The GitHub runner to use; ex: macos-latest"
+        default: '[self-hosted, macOS, mobilebuild05]'
+      ruby_version:
+        required: false
+        type: string
+        description: The Ruby version to use
+        default: 2.7.6
+      workflows_ref:
+        required: false
+        type: string
+        description: The git ref in the "workflows" repository to use when retrieving
+          the desired Fastfile
+        default: ravalp/test
+      test_plan:
+        required: true
+        type: string
+        description: "Name of Test Plan to use; ex: test-QA-Test1"
+        default: test-QA-CICD
+jobs:
+  fastlane:
+      runs-on: ubuntu-latest
+      steps:
+        - name: test
+          run: echo "hello"
